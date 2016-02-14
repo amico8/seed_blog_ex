@@ -1,5 +1,8 @@
 <?php
 
+	// モデルクラスのファイルを読み込む
+   	require('models/blog.php');
+
 	// コントローラのクラスをインスタンス化
 	$controller = new BlogsController();
 
