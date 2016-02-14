@@ -21,10 +21,17 @@
 	* コントローラのクラス
 	*/
 	class BlogsController {
+		// プロパティ
+		private $blog = '';
+
+		// コンストラクタ
+		function __construct(){
+			$this->blog = new Blog();
+		}
 
 		/* 一覧ページを表示 */
 		function index(){
-			echo 'コントローラのindex()が呼ばれました！';
+			$this->blog->index();
 		}
 	}
 ?>
