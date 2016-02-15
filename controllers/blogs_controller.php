@@ -23,16 +23,25 @@
 	class BlogsController {
 		// プロパティ
 		private $blog = '';
+		private $resource = '';
+		private $action = '';
 
 		// コンストラクタ
-		function __construct(){
+		public function __construct(){
 			$this->blog = new Blog();
+			$this->resource = 'blogs';
+			$this->action = 'index';
 		}
 
 		/* 一覧ページを表示 */
-		function index(){
+		public function index(){
 			$this->blog->index();
-			require('views/blogs/index.php');
+			$this->display();
+		}
+
+		/* ビューを表示 */
+		private function display(){
+			require('views/layout/application.php');
 		}
 	}
 ?>
