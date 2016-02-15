@@ -1,11 +1,11 @@
-      <p><a href="add.html" class="btn btn-info">新規投稿</a></p>
+      <p><a href="add" class="btn btn-info">新規投稿</a></p>
         <?php foreach ($this->viewOptions as $viewOption):?>
         <div class="msg">
-          <p><a href="show.html"><?php echo $viewOption['title']; ?></a></p>
+          <p><a href="show/<?php echo $viewOption['id']; ?>"><?php echo $viewOption['title']; ?></a></p>
           <p class="day">
               <?php echo $viewOption['modified']; ?>
-            [<a href="edit.html" style="color: #00994C;">編集</a>]
-            [<a href="" style="color: #F33;">削除</a>]
+            [<a href="edit/<?php echo $viewOption['id']; ?>" style="color: #00994C;">編集</a>]
+            [<a href="delete/<?php echo $viewOption['id']; ?>" style="color: #F33;">削除</a>]
           </p>
         </div>
         <?php endforeach; ?>
