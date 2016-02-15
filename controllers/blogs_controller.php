@@ -32,6 +32,7 @@
 		/* 一覧ページを表示 */
 		function index(){
 			$this->blog->index();
+			require('views/blogs/index.php');
 		}
 	}
 ?>
