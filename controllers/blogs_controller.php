@@ -25,17 +25,27 @@
 		private $blog = '';
 		private $resource = '';
 		private $action = '';
+		private $viewOptions = '';
 
 		// コンストラクタ
 		public function __construct(){
 			$this->blog = new Blog();
 			$this->resource = 'blogs';
 			$this->action = 'index';
+			$this->viewOptions = array();
 		}
 
 		/* 一覧ページを表示 */
 		public function index(){
-			$this->blog->index();
+			// 一覧ページの情報を取得
+			$this->viewOptions = $this->blog->index();
+
+			// foreach ($this->viewOptions as $viewOption) {
+			// 	echo $viewOption['id'];
+			// 	echo $viewOption['title'];
+			// 	echo $viewOption['modified'];
+			// }
+
 			$this->display();
 		}
 

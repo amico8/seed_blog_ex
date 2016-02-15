@@ -14,6 +14,7 @@
 			$this->dbconnect = $db;
 		}
 
+		/* 一覧ページを表示 */
 		public function index() {
 			$sql = 'SELECT * FROM `blogs` WHERE `delete_flag` = 0;';
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
@@ -23,7 +24,6 @@
 			while ($result = mysqli_fetch_assoc($results)) {
 				$rtn[] = $result;
 			}
-			var_dump($rtn);
 			return $rtn;
 		}
 	}
