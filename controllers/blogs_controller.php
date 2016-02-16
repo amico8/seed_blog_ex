@@ -16,6 +16,10 @@
 			$controller->show($id);
 			break;
 
+		case 'add':
+			$controller->add();
+			break;
+
 		default:
 			# code...
 			break;
@@ -61,6 +65,12 @@
 			// コンストラクタで初期値が「index」になっているので、「show」に設定
 			$this->action = 'show';
 
+			$this->display();
+		}
+
+		/* 登録ページを表示 */
+		public function add(){
+			$this->action = 'add';
 			$this->display();
 		}
 
