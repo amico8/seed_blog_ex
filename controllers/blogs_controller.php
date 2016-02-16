@@ -12,6 +12,10 @@
 			$controller->index();
 			break;
 
+		case 'show':
+			$controller->show($id);
+			break;
+
 		default:
 			# code...
 			break;
@@ -47,6 +51,11 @@
 			// }
 
 			$this->display();
+		}
+
+		/* 詳細ページを表示 */
+		public function show($id){
+			echo 'コントローラのshowメソッドを呼び出しました！';
 		}
 
 		/* ビューを表示 */
