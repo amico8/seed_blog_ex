@@ -56,6 +56,8 @@
 		/* 詳細ページを表示 */
 		public function show($id){
 			$this->blog->show($id);
+
+			$this->display();
 		}
 
 		/* ビューを表示 */
