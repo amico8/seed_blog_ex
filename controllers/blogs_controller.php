@@ -28,6 +28,10 @@
 			}
 			break;
 
+		case 'edit':
+			$controller->edit($id);
+			break;
+
 		default:
 			# code...
 			break;
@@ -87,6 +91,15 @@
 			$this->blog->create($post);
 
 			header('Location: index');
+		}
+
+		/* 編集ページを表示 */
+		public function edit($id){
+			// 編集ページの情報を取得
+			$this->viewOptions = $this->blog->edit($id);
+
+			$this->action = 'edit';
+			$this->display();
 		}
 
 		/* ビューを表示 */
