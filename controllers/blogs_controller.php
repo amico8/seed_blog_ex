@@ -56,6 +56,8 @@
 		/* 詳細ページを表示 */
 		public function show($id){
 			$this->blog->show($id);
+			// コンストラクタで初期値が「index」になっているので、「show」に設定
+			$this->action = 'show';
 
 			$this->display();
 		}

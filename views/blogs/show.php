@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
               <p>
-                <a href="index.html" class="btn btn-default">戻る</a>&nbsp;&nbsp;
+                <a href="/seed_blog_ex/blogs/index" class="btn btn-default">戻る</a>&nbsp;&nbsp;
               </p>
             </div>
           </form>
