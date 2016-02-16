@@ -26,5 +26,10 @@
 			}
 			return $rtn;
 		}
+
+		/* 詳細情報を表示 */
+		public function show($id) {
+			echo 'モデルのshowメソッドを呼び出しました！';
+		}
 	}
 ?>

@@ -55,7 +55,7 @@
 
 		/* 詳細ページを表示 */
 		public function show($id){
-			echo 'コントローラのshowメソッドを呼び出しました！';
+			$this->blog->show($id);
 		}
 
 		/* ビューを表示 */
