@@ -20,6 +20,14 @@
 			$controller->add();
 			break;
 
+		case 'create':
+			if (!empty($post['title']) && !empty($post['body'])) {
+				$controller->create($_POST);
+			} else {
+				$controller->add();
+			}
+			break;
+
 		default:
 			# code...
 			break;
@@ -72,6 +80,13 @@
 		public function add(){
 			$this->action = 'add';
 			$this->display();
+		}
+
+		/* 登録処理 */
+		public function create($post){
+			$this->blog->create($post);
+
+			header('Location: index');
 		}
 
 		/* ビューを表示 */

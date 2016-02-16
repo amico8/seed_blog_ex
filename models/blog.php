@@ -34,5 +34,15 @@
 
 			return mysqli_fetch_assoc($results);
 		}
+
+		/* 登録処理 */
+		public function create($post) {
+			$sql = sprintf('INSERT INTO `blogs`(`title`, `body`, `delete_flag`, `created`) VALUES ("%s","%s",0,now())',
+				mysqli_real_escape_string($this->dbconnect, $post['title']),
+				mysqli_real_escape_string($this->dbconnect, $post['body'])
+			);
+
+			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+		}
 	}
 ?>
