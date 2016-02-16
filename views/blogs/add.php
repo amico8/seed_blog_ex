@@ -1,5 +1,5 @@
         <div class="msg">
-          <form method="post" action="" class="form-horizontal" role="form">
+          <form method="post" action="/seed_blog_ex/blogs/create" class="form-horizontal" role="form">
             <div class="form-group">
               <label for="name" class="col-md-3 control-label">タイトル</label>
               <div class="col-md-9">
@@ -15,7 +15,7 @@
             <div class="form-group pull-right">
               <p>
                 <a href="/seed_blog_ex/blogs/index" class="btn btn-default">戻る</a>&nbsp;&nbsp;
-                <a href="index.html" class="btn btn-success">投稿する</a>
+                <input type="submit" class="btn btn-success" value="投稿する">
               </p>
             </div>
           </form>
