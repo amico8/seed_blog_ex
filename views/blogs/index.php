@@ -1,4 +1,4 @@
-      <p><a href="add" class="btn btn-info">新規投稿</a></p>
+      <p><a href="add/" class="btn btn-info">新規投稿</a></p>
         <?php foreach ($this->viewOptions as $viewOption):?>
         <div class="msg">
           <p><a href="show/<?php echo $viewOption['id']; ?>"><?php echo $viewOption['title']; ?></a></p>
