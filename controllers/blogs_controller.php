@@ -55,7 +55,9 @@
 
 		/* 詳細ページを表示 */
 		public function show($id){
-			$this->blog->show($id);
+			// 詳細ページの情報を取得
+			$this->viewOptions = $this->blog->show($id);
+
 			// コンストラクタで初期値が「index」になっているので、「show」に設定
 			$this->action = 'show';
 
