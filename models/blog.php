@@ -64,5 +64,10 @@
 			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 		}
 
+		/* 削除処理 */
+		public function delete($id) {
+			$sql = 'UPDATE `blogs` SET `delete_flag`= 1 WHERE `id` =' . $id;
+			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
+		}
 	}
 ?>

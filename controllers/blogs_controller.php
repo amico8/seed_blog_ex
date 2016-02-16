@@ -36,6 +36,10 @@
 			$controller->update($post);
 			break;
 
+		case 'delete':
+			$controller->delete($id);
+			break;
+
 		default:
 			# code...
 			break;
@@ -111,6 +115,13 @@
 			$this->blog->update($post);
 
 			header('Location: index');
+		}
+
+		/* 削除処理 */
+		public function delete($id){
+			$this->blog->delete($id);
+
+			header('Location: ../index');
 		}
 
 		/* ビューを表示 */
