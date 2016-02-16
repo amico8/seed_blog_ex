@@ -45,12 +45,23 @@
 			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 		}
 
-		/* 詳細情報を表示 */
+		/* 編集情報を表示 */
 		public function edit($id) {
 			$sql = 'SELECT * FROM `blogs` WHERE `delete_flag` = 0 and `id` =' . $id;
 			$results = mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 
 			return mysqli_fetch_assoc($results);
+		}
+
+		/* 更新処理 */
+		public function update($post) {
+			$sql = sprintf('UPDATE `blogs` SET `title`="%s",`body`="%s" WHERE `id` = %d',
+				mysqli_real_escape_string($this->dbconnect, $post['title']),
+				mysqli_real_escape_string($this->dbconnect, $post['body']),
+				$post['id']
+			);
+
+			mysqli_query($this->dbconnect, $sql) or die(mysqli_error($this->dbconnect));
 		}
 
 	}

@@ -22,7 +22,7 @@
 
 		case 'create':
 			if (!empty($post['title']) && !empty($post['body'])) {
-				$controller->create($_POST);
+				$controller->create($post);
 			} else {
 				$controller->add();
 			}
@@ -30,6 +30,10 @@
 
 		case 'edit':
 			$controller->edit($id);
+			break;
+
+		case 'update':
+			$controller->update($post);
 			break;
 
 		default:
@@ -100,6 +104,13 @@
 
 			$this->action = 'edit';
 			$this->display();
+		}
+
+		/* 更新処理 */
+		public function update($post){
+			$this->blog->update($post);
+
+			header('Location: index');
 		}
 
 		/* ビューを表示 */

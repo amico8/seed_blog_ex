@@ -18,5 +18,6 @@
                 <input type="submit" class="btn btn-danger" value="更新する">
               </p>
             </div>
+            <input type="hidden" name="id" value="<?php echo $this->viewOptions['id']; ?>">
           </form>
         </div>
